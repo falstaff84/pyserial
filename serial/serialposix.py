@@ -334,7 +334,7 @@ class Serial(SerialBase, PlatformSpecific):
                 lflag &= ~getattr(termios, flag)
 
         oflag &= ~(termios.OPOST | termios.ONLCR | termios.OCRNL)
-        iflag &= ~(termios.INLCR | termios.IGNCR | termios.ICRNL | termios.IGNBRK)
+        iflag &= ~(termios.INLCR | termios.IGNCR | termios.ICRNL | termios.IGNBRK | termios.BRKINT)
         if hasattr(termios, 'IUCLC'):
             iflag &= ~termios.IUCLC
         if hasattr(termios, 'PARMRK'):
